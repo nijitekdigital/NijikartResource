@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Adobe Devanagari';
+    src: url('https://nijitekdigital.github.io/NijikartResource/font/AdobeDevanagari-Bold.otf');
+    /* Add additional font properties if needed */
+    }@font-face {
+      font-family: 'Adobe Devanagari';
+      src: url('https://nijitekdigital.github.io/NijikartResource/font/AdobeDevanagari-BoldItalic.otf');
+      }@font-face {
+        font-family: 'Adobe Devanagari';
+        src: url('https://nijitekdigital.github.io/NijikartResource/font/AdobeDevanagari-Italic.otf');
+        }@font-face {
+          font-family: 'Adobe Devanagari';
+          src: url('https://nijitekdigital.github.io/NijikartResource/font/AdobeDevanagari-Regular.otf');
+          }
+
+  @font-face {
+    font-family: 'Rozha One';
+    src: url('https://nijitekdigital.github.io/NijikartResource/font/RozhaOne-Regular.ttf');
+    }
+
+  @font-face {
+    font-family: 'Playfair Display';
+    src: url('https://nijitekdigital.github.io/NijikartResource/font/playfair-display.regular.ttf');
+    }
+
+  @font-face {
+    font-family: 'Abhaya Libre';
+    src: url('https://nijitekdigital.github.io/NijikartResource/font/AbhayaLibre-Bold.ttf');
+    }@font-face {
+      font-family: 'Abhaya Libre';
+      src: url('https://nijitekdigital.github.io/NijikartResource/font/AbhayaLibre-ExtraBold.ttf');
+      }@font-face {
+        font-family: 'Abhaya Libre';
+        src: url('https://nijitekdigital.github.io/NijikartResource/font/AbhayaLibre-Medium.ttf');
+        }@font-face {
+          font-family: 'Abhaya Libre';
+          src: url('https://nijitekdigital.github.io/NijikartResource/font/AbhayaLibre-Regular.ttf');
+          }@font-face {
+            font-family: 'Abhaya Libre';
+            src: url('https://nijitekdigital.github.io/NijikartResource/font/AbhayaLibre-SemiBold.ttf');
+            }
+
+  @font-face {
+    font-family: 'Balentia';
+    src: url('https://nijitekdigital.github.io/NijikartResource/font/Balentia Bold.otf');
+    }@font-face {
+      font-family: 'Balentia';
+      src: url('https://nijitekdigital.github.io/NijikartResource/font/Balentia Distort.otf');
+      }@font-face {
+        font-family: 'Balentia';
+        src: url('https://nijitekdigital.github.io/NijikartResource/font/Balentia Extras.otf');
+        }@font-face {
+          font-family: 'Balentia';
+          src: url('https://nijitekdigital.github.io/NijikartResource/font/Balentia Italic.otf');
+          }@font-face {
+            font-family: 'Balentia';
+            src: url('https://nijitekdigital.github.io/NijikartResource/font/Balentia Regular.otf');
+            }
+    /* Add more @font-face rules for additional fonts */
+  
