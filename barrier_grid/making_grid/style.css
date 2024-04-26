@@ -1,0 +1,190 @@
+:root {
+    --pixel: 1px;
+    --cover: #212123;
+    --covered: calc(var(--pixel) * 5); /*6 frames, 5 covered at a time */
+    --space: white; /* will cause transparency when mix blend mode multiply */
+    --w: 100vw;
+    --h: 100vh;
+    
+    --blend: multiply;
+  }
+  .highres {
+    --pixel: .5px;
+  }
+  main div {
+    --offset: calc(var(--pixel) * 1);
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    background-image: 
+      linear-gradient(to right, 
+        transparent 0,
+        transparent calc(var(--pixel)),
+        var(--space) var(--pixel),
+        var(--space) calc(var(--covered))),
+      var(--background-image);
+    
+    background-position: 
+      calc(var(--offset) - calc(var(--pixel) * 1)) 0,
+      center center;
+    background-size: 
+      calc(var(--pixel) * 6) 100%,
+      cover;
+    background-repeat: 
+      repeat,
+      no-repeat;
+    
+    mix-blend-mode: var(--blend);
+    
+    /* counter the black lines by brightening the images */
+    filter: saturate(200%);
+  }
+  
+  /*want to try using your own frames? insert them here, with either a gradient or a url() */
+  /* main div:nth-of-type(1) {
+    --background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/61811/h1.jpg);
+  }
+  main div:nth-of-type(2) {
+    --offset: calc(var(--pixel) * 2);
+    --background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/61811/h2.jpg);
+  }
+  main div:nth-of-type(3) {
+    --offset: calc(var(--pixel) * 3);
+    --background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/61811/h3.jpg);
+  }
+  main div:nth-of-type(4) {
+    --offset: calc(var(--pixel) * 4);
+    --background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/61811/h4.jpg);
+  }
+  main div:nth-of-type(5) {
+    --offset: calc(var(--pixel) * 5);
+    --background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/61811/h5.jpg);
+  }
+  main div:nth-of-type(6) {
+    --offset: calc(var(--pixel) * 6);
+    --background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/61811/h6.jpg);
+  } */
+
+  /* main div:nth-of-type(1) {
+     --background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/61811/h1.jpg); 
+    --background-image: url('file:///D:/barrier_grid/image/1.jpg');
+
+  }
+  main div:nth-of-type(2) {
+    --offset: calc(var(--pixel) * 2);
+    --background-image: url('file:///D:/barrier_grid/image/2.jpg');
+  }
+  main div:nth-of-type(3) {
+    --offset: calc(var(--pixel) * 3);
+    --background-image: url('file:///D:/barrier_grid/image/3.jpg');
+  }
+  main div:nth-of-type(4) {
+    --offset: calc(var(--pixel) * 4);
+    --background-image: url('file:///D:/barrier_grid/image/4.jpg');
+  }
+  main div:nth-of-type(5) {
+    --offset: calc(var(--pixel) * 5);
+    --background-image: url('file:///D:/barrier_grid/image/5.jpg');
+  }
+  main div:nth-of-type(6) {
+    --offset: calc(var(--pixel) * 6);
+    --background-image: url('file:///D:/barrier_grid/image/6.jpg');
+  } */
+  
+  /* ---------------------------------------------------------------------------------------- */
+  
+  
+  
+  /*the sliding cover that triggers the motion illusion */
+  main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: calc(var(--pixel) * -12);
+    bottom: 0;
+    left: calc(var(--pixel) * -12);
+    
+    background: linear-gradient(to right,
+      transparent 0px,
+      transparent calc(var(--pixel) * 1),
+      var(--cover) calc(var(--pixel) * 1),
+      var(--cover) calc(var(--pixel) * 6));
+    background-size: calc(var(--pixel) * 6) 100%;
+    
+    will-change: transform, opacity;
+    transition: opacity 800ms linear;
+    opacity: var(--show, 1);
+    
+    mix-blend-mode: normal;
+    
+    /* update this via JS on drag or orientationchange */
+    transform: translateX(var(--slide-amount, 0));
+  }
+  
+  
+  
+  
+  main {
+    /* width: var(--w);
+    height: var(--h); */
+    width: 600px;
+    height : 600px;
+    position: relative;
+    background: white;
+  }
+  *, *::after {
+    box-sizing: border-box;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsl(203, 50%, 4%);
+    margin: 0;
+    overflow: hidden;
+    touch-action: none;
+    
+    font-family: system-ui, 'Segoe UI', sans-serif
+  }
+  form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: .2rem 1rem;
+    text-align: center;
+    
+    background: rgba(245,245,255,.86);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    --form-color-alpha: rgba(150, 250, 255, .1);
+  }
+  form div {
+    padding: .5rem .7rem;
+    font-size: 12px;
+  }
+  form label {
+    transform: translateX(-1.5rem)
+  }
+  
+  
+  
